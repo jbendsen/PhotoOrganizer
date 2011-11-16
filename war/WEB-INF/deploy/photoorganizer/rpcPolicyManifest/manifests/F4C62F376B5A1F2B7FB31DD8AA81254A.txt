@@ -1,0 +1,2 @@
+serviceClass: dk.lundogbendsen.photoorganizer.client.GreetingService
+path: 76DE0710002EDD6C0E4E8C24E7CD3799.gwt.rpc
