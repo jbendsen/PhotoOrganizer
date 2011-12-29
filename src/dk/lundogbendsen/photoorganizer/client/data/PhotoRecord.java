@@ -1,75 +1,79 @@
 package dk.lundogbendsen.photoorganizer.client.data;
 
-import com.smartgwt.client.widgets.tile.TileRecord;
+import com.smartgwt.client.widgets.grid.ListGridRecord;
 
-public class PhotoRecord extends TileRecord {
+import java.util.Date;
+
+public class PhotoRecord extends ListGridRecord {
 
     public PhotoRecord() {
     }
 
-    public PhotoRecord(String name, String price, String picture) {
-        this(name, price, picture, null);
-    }
-
-    public PhotoRecord(String name, String price, String picture, String description) {
-        setName(name);
-        setPrice(price);
-        setPicture(picture);
+    public PhotoRecord(int photoId, String item, String sku, String description, String album, String units, Double unitCost, Boolean inStock, Date nextShipment) {
+        setItemID(photoId);
+        setitemName(item);
+        setSKU(sku);
         setDescription(description);
+        setCategory(album);
+        setUnits(units);
+        setUnitCost(unitCost);
+        setInStock(inStock);
+        setNextShipment(nextShipment);
     }
 
     /**
-     * Set the name.
+     * Set the photoId.
      *
-     * @param name the name
+     * @param photoId the photoId
      */
-    public void setName(String name) {
-        setAttribute("name", name);
+    public void setItemID(int photoId) {
+        setAttribute("photoId", photoId);
     }
 
     /**
-     * Return the name.
+     * Return the photoId.
      *
-     * @return the name
+     * @return the photoId
      */
-    public String getName() {
-        return getAttribute("name");
+    public int getItemID() {
+        return getAttributeAsInt("photoId");
+    }
+
+
+    /**
+     * Set the item.
+     *
+     * @param item the item
+     */
+    public void setitemName(String item) {
+        setAttribute("itemName", item);
     }
 
     /**
-     * Set the price.
+     * Return the item.
      *
-     * @param price the price
+     * @return the item
      */
-    public void setPrice(String price) {
-        setAttribute("price", price);
+    public String getitemName() {
+        return getAttribute("itemName");
     }
 
     /**
-     * Return the price.
+     * Set the SKU.
      *
-     * @return the price
+     * @param SKU the SKU
      */
-    public String getPrice() {
-        return getAttribute("price");
+    public void setSKU(String SKU) {
+        setAttribute("SKU", SKU);
     }
 
     /**
-     * Set the picture.
+     * Return the SKU.
      *
-     * @param picture the picture
+     * @return the SKU
      */
-    public void setPicture(String picture) {
-        setAttribute("picture", picture);
-    }
-
-    /**
-     * Return the picture.
-     *
-     * @return the picture
-     */
-    public String getPicture() {
-        return getAttribute("picture");
+    public String getSKU() {
+        return getAttribute("SKU");
     }
 
     /**
@@ -88,6 +92,97 @@ public class PhotoRecord extends TileRecord {
      */
     public String getDescription() {
         return getAttribute("description");
-
     }
+
+    /**
+     * Set the category.
+     *
+     * @param category the category
+     */
+    public void setCategory(String category) {
+        setAttribute("category", category);
+    }
+
+    /**
+     * Return the category.
+     *
+     * @return the category
+     */
+    public String getCategory() {
+        return getAttribute("category");
+    }
+
+    /**
+     * Set the units.
+     *
+     * @param units the units
+     */
+    public void setUnits(String units) {
+        setAttribute("units", units);
+    }
+
+    /**
+     * Return the units.
+     *
+     * @return the units
+     */
+    public String getUnits() {
+        return getAttribute("units");
+    }
+
+    /**
+     * Set the unitCost.
+     *
+     * @param unitCost the unitCost
+     */
+    public void setUnitCost(Double unitCost) {
+        setAttribute("unitCost", unitCost);
+    }
+
+    /**
+     * Return the unitCost.
+     *
+     * @return the unitCost
+     */
+    public Float getUnitCost() {
+        return getAttributeAsFloat("unitCost");
+    }
+
+    /**
+     * Set the inStock.
+     *
+     * @param inStock the inStock
+     */
+    public void setInStock(Boolean inStock) {
+        setAttribute("inStock", inStock);
+    }
+
+    /**
+     * Return the inStock.
+     *
+     * @return the inStock
+     */
+    public Boolean getInStock() {
+        return getAttributeAsBoolean("inStock");
+    }
+
+    /**
+     * Set the nextShipment.
+     *
+     * @param nextShipment the nextShipment
+     */
+    public void setNextShipment(Date nextShipment) {
+        setAttribute("nextShipment", nextShipment);
+    }
+
+    /**
+     * Return the nextShipment.
+     *
+     * @return the nextShipment
+     */
+    public Date getNextShipment() {
+        return getAttributeAsDate("nextShipment");
+    }
+
+
 }

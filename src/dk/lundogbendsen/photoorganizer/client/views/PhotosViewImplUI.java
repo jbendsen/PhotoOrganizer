@@ -5,8 +5,6 @@ import com.google.gwt.user.client.ui.Composite;
 import com.smartgwt.client.widgets.tile.TileGrid;
 import com.smartgwt.client.widgets.viewer.DetailViewerField;
 
-import dk.lundogbendsen.photoorganizer.client.data.Oracle;
-
 public class PhotosViewImplUI extends Composite {
 	TileGrid tileGrid;
 	Button b;

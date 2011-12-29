@@ -7,6 +7,7 @@ import com.google.web.bindery.event.shared.EventBus;
 import com.google.web.bindery.event.shared.SimpleEventBus;
 
 import dk.lundogbendsen.photoorganizer.client.activities.PhotosActivity;
+import dk.lundogbendsen.photoorganizer.client.views.PhotosPanel;
 import dk.lundogbendsen.photoorganizer.client.views.PhotosView;
 import dk.lundogbendsen.photoorganizer.client.views.PhotosViewImpl;
 
@@ -21,9 +22,9 @@ public class ClientFactory {
 		return new PhotosActivity(createPhotosView());
 	}
 
-	private PhotosView createPhotosView() {
+	private PhotosPanel createPhotosView() {
 		// TODO Auto-generated method stub
-		return new PhotosViewImpl();
+		return new PhotosPanel();
 	}
 	
 	public AppPlaceHistoryMapper getHistoryMapper() {
