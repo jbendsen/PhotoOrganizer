@@ -1,0 +1,35 @@
+<List>
+<photo>
+	<albumId>1</albumId>
+    <photoName>58074602</photoName>
+    <photoUrl>shelby.jpg</photoUrl>
+    <tag>natur</tag>
+    <description>Schwan Stabilo 808 ballpoint pens are a quality ballpoint with a non-slip grip zone. Long writing length due to the extra large refill with visible ink volume. Available in medium and fine point in four colours.</description>
+</photo>
+<photo>
+
+    <photoName>Pens Stabiliner 808 Ballpoint Fine Blue</photoName>
+    <photoUrl>saleen.jpg</photoUrl>
+    <albumId>1</albumId>
+    <tag>natur</tag>
+    <photoId>58074604</photoId>
+
+</photo>
+<photo>
+    <photoName>Pens Stabiliner 808 Ballpoint Fine Red</photoName>
+    <photoUrl>pagani.jpg</photoUrl>
+    <albumId>3</albumId>
+    <tag>natur</tag>
+    <photoId>58074605</photoId>
+   
+</photo>
+<photo>
+   
+    <photoName>Pens Stabiliner 808 Ballpoint Fine Green</photoName>
+    <photoUrl>mclaren.jpg</photoUrl>
+    <albumId>4</albumId>
+    <tag>natur,ferie</tag>
+    <photoId>58074606</photoId>
+  
+</photo>
+</List>

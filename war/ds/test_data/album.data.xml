@@ -1,0 +1,22 @@
+<List>
+<album>
+    <albumName>Album 1</albumName>
+    <albumId>1</albumId>
+    <parentID>root</parentID>
+</album>
+<album>
+    <albumName>Album 2</albumName>
+    <albumId>2</albumId>
+    <parentID>1</parentID>
+</album>
+<album>
+    <albumName>Album 3</albumName>
+    <albumId>3</albumId>
+    <parentID>1</parentID>
+</album>
+<album>
+    <albumName>Album 4</albumName>
+    <albumId>4</albumId>
+    <parentID>root</parentID>
+</album>
+</List>
