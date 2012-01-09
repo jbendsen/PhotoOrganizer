@@ -8,8 +8,6 @@ import com.google.web.bindery.event.shared.SimpleEventBus;
 
 import dk.lundogbendsen.photoorganizer.client.activities.PhotosActivity;
 import dk.lundogbendsen.photoorganizer.client.views.PhotosPanel;
-import dk.lundogbendsen.photoorganizer.client.views.PhotosView;
-import dk.lundogbendsen.photoorganizer.client.views.PhotosViewImpl;
 
 public class ClientFactory {
 	private PlaceController placeController;

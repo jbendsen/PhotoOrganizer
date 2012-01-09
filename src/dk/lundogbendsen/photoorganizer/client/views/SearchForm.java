@@ -16,7 +16,6 @@
 package dk.lundogbendsen.photoorganizer.client.views;
 
 import com.smartgwt.client.data.DataSource;
-import com.smartgwt.client.widgets.form.DynamicForm;
 import com.smartgwt.client.widgets.form.fields.ButtonItem;
 import com.smartgwt.client.widgets.form.fields.CheckboxItem;
 import com.smartgwt.client.widgets.form.fields.ComboBoxItem;
@@ -31,9 +30,7 @@ public class SearchForm extends com.smartgwt.client.widgets.form.SearchForm {
     public SearchForm(DataSource supplyItemDS) {
 
         setDataSource(supplyItemDS);
-        setTop(20);
-        setCellPadding(6);
-        setNumCols(7);
+
         setStyleName("defaultBorder");
         
         findItem = new ButtonItem("Find");

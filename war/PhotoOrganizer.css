@@ -32,3 +32,9 @@ h1 {
 #closeButton {
   margin: 15px 6px 6px;
 }
+
+.poLabel{
+	font-family: sans-serif;
+	background-color: silver;
+	padding-left: 7px;
+}

@@ -1,9 +1,8 @@
 package dk.lundogbendsen.photoorganizer.client.data;
 
 import com.smartgwt.client.data.DataSource;
-import com.smartgwt.client.data.fields.*;
-import com.smartgwt.client.widgets.form.validator.FloatPrecisionValidator;
-import com.smartgwt.client.widgets.form.validator.FloatRangeValidator;
+import com.smartgwt.client.data.fields.DataSourceIntegerField;
+import com.smartgwt.client.data.fields.DataSourceTextField;
 
 public class PhotoXmlDS extends DataSource {
 

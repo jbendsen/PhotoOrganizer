@@ -26,22 +26,24 @@ import com.smartgwt.client.widgets.form.fields.TextAreaItem;
 import com.smartgwt.client.widgets.form.fields.TextItem;
 import com.smartgwt.client.widgets.layout.VLayout;
 
+import dk.lundogbendsen.photoorganizer.client.data.PhotoXmlDS;
+
 public class PhotoDetailTabPane extends VLayout {
 
     //private DetailViewer itemViewer;
  //   private DynamicForm editorForm;
  //   private Label editorLabel;
     private PhotoTileGrid itemListGrid;
-	private DynamicForm dynamicForm;
+	private DynamicForm dynamicForm = new DynamicForm();
 	private Img image;
    
 
     public PhotoDetailTabPane(DataSource supplyItemDS, DataSource albumDS, PhotoTileGrid itemListGrid) {
         this.itemListGrid = itemListGrid;
-       dynamicForm = new DynamicForm();
-        dynamicForm.setDataSource(supplyItemDS);
-     setWidth100();
-       setMargin(25);
+      // dynamicForm = new FilterformSearchForm(supplyItemDS);
+       // dynamicForm.setDataSource(supplyItemDS);
+   //  setWidth100();
+     //  setMargin(25);
         //setEmptyMessage("Select an item to view its details");
        
         
@@ -54,7 +56,7 @@ public class PhotoDetailTabPane extends VLayout {
       selectItemMultipleGrid.setMultipleAppearance(MultipleAppearance.PICKLIST);  
       selectItemMultipleGrid.setValueMap("natur", "bil", "dyr", "ferie");  
    
-      image = new Img("cars/shelby.jpg",300,200);
+      image = new Img("cars/shelby.jpg",310,200);
       dynamicForm.setFields(picture,selectItemMultipleGrid,description);
 
       addMember(image);
@@ -89,7 +91,7 @@ draw();
     	  System.out.println(selectedRecord.getAttribute("photoUrl"));
     	  image.setImageType(ImageStyle.CENTER);
     	  image.setSrc("cars/"+selectedRecord.getAttribute("photoUrl"));
-    	  image.setSize("300", "200");
+    	
     	  image.redraw();
     	  dynamicForm.editRecord(selectedRecord);
       }

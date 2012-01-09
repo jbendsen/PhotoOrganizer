@@ -15,12 +15,12 @@
 
 package dk.lundogbendsen.photoorganizer.client.views;
 
-import com.google.gwt.i18n.client.NumberFormat;
 import com.smartgwt.client.data.DataSource;
-import com.smartgwt.client.types.Alignment;
 import com.smartgwt.client.types.SelectionStyle;
 import com.smartgwt.client.widgets.form.fields.SpinnerItem;
-import com.smartgwt.client.widgets.grid.*;
+import com.smartgwt.client.widgets.grid.ListGrid;
+import com.smartgwt.client.widgets.grid.ListGridField;
+import com.smartgwt.client.widgets.grid.ListGridFieldIfFunction;
 import com.smartgwt.client.widgets.tile.TileGrid;
 import com.smartgwt.client.widgets.viewer.DetailViewerField;
 
@@ -34,7 +34,7 @@ public class PhotoTileGrid extends TileGrid {
 
         DetailViewerField itemName = new DetailViewerField("photoName", "Name");
         //itemName.setShowHover(true);
-        DetailViewerField unitCost = new DetailViewerField("unitCost");
+        //DetailViewerField unitCost = new DetailViewerField("unitCost");
 
 //        unitCost.setCellFormatter(new CellFormatter() {
 //            public String format(Object value, ListGridRecord record, int rowNum, int colNum) {
@@ -52,13 +52,6 @@ public class PhotoTileGrid extends TileGrid {
         spinnerItem.setStep(0.01);
       //  unitCost.setEditorType(spinnerItem);
 
-        DetailViewerField sku = new DetailViewerField("SKU");
-        //sku.setCanEdit(false);
-
-        DetailViewerField description = new DetailViewerField("description");
-       // description.setShowHover(true);
-
-        DetailViewerField albumId = new DetailViewerField("albumId");
         //category.setCanEdit(false);
 
         DetailViewerField inStock = new DetailViewerField("inStock");
@@ -83,6 +76,7 @@ public class PhotoTileGrid extends TileGrid {
         setCanDragTilesOut(true);
         setHoverWidth(110);
         setHoverHeight(20);
+        setWidth100();
         setSelectionType(SelectionStyle.SINGLE);
         setTileSize(140);
     }

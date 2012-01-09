@@ -17,6 +17,7 @@ package dk.lundogbendsen.photoorganizer.client.views;
 
 import com.smartgwt.client.data.Criteria;
 import com.smartgwt.client.data.DataSource;
+import com.smartgwt.client.widgets.Label;
 import com.smartgwt.client.widgets.events.ClickEvent;
 import com.smartgwt.client.widgets.events.ClickHandler;
 import com.smartgwt.client.widgets.form.fields.ComboBoxItem;
@@ -28,19 +29,52 @@ import com.smartgwt.client.widgets.layout.VLayout;
 import com.smartgwt.client.widgets.tree.events.NodeClickEvent;
 import com.smartgwt.client.widgets.tree.events.NodeClickHandler;
 
+import dk.lundogbendsen.photoorganizer.client.data.AlbumXmlDS;
+import dk.lundogbendsen.photoorganizer.client.data.PhotoXmlDS;
+
 public class PhotosPanel extends HLayout {
 
     private SearchForm searchForm;
     private AlbumTreeGrid albumTree;
     private PhotoTileGrid itemList;
+    private Label albumTreeLabel;
+    private Label photoTileGridLabel;
+    private Label detailLabel;
     private PhotoDetailTabPane itemDetailTabPane;
     
 	private VLayout middleLayout;
 //private SectionStackSection findSection;
 	
+	public Label getDetailLabel() {
+		if(detailLabel==null){
+			detailLabel= new Label("");
+			detailLabel.setStyleName("poLabel");
+			detailLabel.setHeight(30);
+		}
+		return detailLabel;
+	}
+	
+	public Label getPhotoTileGridLabel() {
+		if(photoTileGridLabel==null){
+			photoTileGridLabel= new Label("Test");
+			photoTileGridLabel.setStyleName("poLabel");
+			photoTileGridLabel.setHeight(30);
+		}
+		return photoTileGridLabel;
+	}
+	
+	public Label getAlbumTreeLabel() {
+		if(albumTreeLabel==null){
+			albumTreeLabel= new Label("Albums (Firmanavn)");
+			albumTreeLabel.setStyleName("poLabel");
+			albumTreeLabel.setHeight(30);
+		}
+		return albumTreeLabel;
+	}
+	
 	private VLayout rightSideLayout;
 
-	private SectionStackSection itemDetailsSection;
+
 	private VLayout leftSideLayout;
 	
 	DataSource albumDS = AlbumXmlDS.getInstance();
@@ -50,7 +84,7 @@ public class PhotosPanel extends HLayout {
     public PhotosPanel() {
         setWidth100();
         setHeight100();
-        setLayoutMargin(20);
+        setLayoutMargin(5);
 
         
 
@@ -132,6 +166,7 @@ public class PhotosPanel extends HLayout {
     				
     				@Override
     				public void onClick(ClickEvent event) {
+    					getDetailLabel().setContents(itemList.getSelectedRecord().getAttribute(PhotoXmlDS.FieldNameEnum.photoName.name()));
     					itemDetailTabPane.updateDetails();
     					
     				}
@@ -148,6 +183,7 @@ public class PhotosPanel extends HLayout {
     		    albumTree.addNodeClickHandler(new NodeClickHandler() {
     		        public void onNodeClick(NodeClickEvent event) {
     		            String albumId = event.getNode().getAttribute("albumId");
+    		            getPhotoTileGridLabel().setContents(event.getNode().getAttribute("albumName"));
     		            findItems(albumId);
     		        }
     		    });
@@ -159,9 +195,11 @@ public class PhotosPanel extends HLayout {
     public VLayout getLeftSideLayout() {
     	if(leftSideLayout==null){
     		 leftSideLayout = new VLayout();
-    		    leftSideLayout.setWidth(280);
-    		    leftSideLayout.setShowResizeBar(true);
-    		
+    		    leftSideLayout.setWidth(300);
+    		    leftSideLayout.setMembersMargin(10);
+    		    leftSideLayout.setMargin(10);
+    		    //leftSideLayout.setShowResizeBar(true);
+    		    leftSideLayout.addMember(getAlbumTreeLabel());
     		    leftSideLayout.addMember(getAlbumTree());
     		  
     	}
@@ -172,7 +210,10 @@ public class PhotosPanel extends HLayout {
     public VLayout getRightSideLayout() {
     	if(rightSideLayout==null){
     		 rightSideLayout = new VLayout();
-    		   
+    		 rightSideLayout.setWidth(330);
+    		 rightSideLayout.setMembersMargin(10);
+    		 rightSideLayout.setMargin(10);
+    		 rightSideLayout.addMember(getDetailLabel());
     		    rightSideLayout.addMember(getItemDetailTabPane());
     	}
 		return rightSideLayout;
@@ -200,11 +241,13 @@ public class PhotosPanel extends HLayout {
     public VLayout getMiddleLayout(){
     	if(middleLayout==null){
     		  middleLayout = new VLayout();
-    	       
-    	      
+    		  //middleLayout.setWidth("50%");
+    		  middleLayout.setMembersMargin(10);
+    			 middleLayout.setMargin(10);
+    	      	middleLayout.addMember(getPhotoTileGridLabel());
     	        middleLayout.addMember(getItemList());
     	        middleLayout.addMember(searchForm);
-    	        middleLayout.setShowResizeBar(true);
+    	       // middleLayout.setShowResizeBar(true);
     	}
     	return middleLayout;
     }
